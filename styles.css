@@ -1,0 +1,690 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.logo h1:hover {
+    color: #0056b3;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+.cta {
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 20px;
+    transition: background 0.3s;
+}
+
+.cta:hover {
+    background-color: #0056b3;
+}
+
+.cart-icon a {
+    font-size: 20px;
+    color: #333;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.cart-icon a:hover {
+    color: #007BFF;
+}
+
+/* Toggle Menu (Mobile) */
+.toggle-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        transition: left 0.3s;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .cart-icon {
+        margin-left: 10px;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+}
+
+/* Sección de Inicio */
+#home {
+    margin-top: 80px;
+    padding: 100px 20px;
+    background: url('images/home-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+#home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.home-container {
+    position: relative;
+    z-index: 1;
+}
+
+#home h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+#home p {
+    font-size: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Sección Acerca del Proyecto */
+#about {
+    padding: 50px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+#about p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#about img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: zoomIn 1s ease-out;
+}
+
+/* Sección de Intercambios */
+#exchanges {
+    position: relative;
+    padding: 100px 20px 50px 20px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+#exchanges #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.exchanges-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,123,255,0.6);
+    z-index: -1;
+}
+
+.exchanges-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#exchanges h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.progress-bar {
+    width: 80%;
+    background-color: rgba(255,255,255,0.3);
+    margin: 0 auto 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #28a745;
+    transition: width 2s ease-in-out;
+}
+
+.exchanges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.exchange-card {
+    background-color: rgba(255,255,255,0.9);
+    width: 300px;
+    margin: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exchange-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.exchange-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.exchange-card .card-content {
+    padding: 15px;
+}
+
+.exchange-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.exchange-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Sección de Merchandising */
+#merchandising {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.merchandising-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#merchandising h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #007BFF;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    width: 250px;
+    margin: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card .card-content {
+    padding: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.product-card .price {
+    font-size: 16px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #007BFF;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007BFF;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    position: relative;
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* 'Make an Offer' Modal Styles */
+#offer-modal .modal-content {
+    width: 80%;
+}
+
+#offer-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#offer-form input,
+#offer-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+#offer-form input:focus,
+#offer-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#offer-form button {
+    padding: 15px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#offer-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Carrito de Compras */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cart-total p {
+    font-size: 18px;
+}
+
+#checkout-button {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#checkout-button:hover {
+    background-color: #e0a800;
+}
+
+/* Formulario de Contacto */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #007BFF;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#contact-form button {
+    padding: 15px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Video Background */
+#exchanges #bg-video {
+    z-index: -2;
+}
+
+#exchanges .exchanges-overlay {
+    background-color: rgba(0, 123, 255, 0.5);
+}
+
+/* Additional Styles for Animations */
+.exchange-card,
+.product-card,
+.about-container img,
+.logo h1,
+#home h2,
+#home p,
+#about h2,
+#about p,
+#about img,
+#exchanges h2,
+#merchandising h2,
+.contact-container {
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.exchange-card:hover,
+.product-card:hover,
+.logo h1:hover,
+.cta:hover,
+.cart-icon a:hover,
+.social-media a:hover,
+.footer-links a:hover,
+#checkout-button:hover {
+    transform: scale(1.05);
+}
+
+/* Additional Media Queries */
+@media screen and (max-width: 480px) {
+    #home h2 {
+        font-size: 32px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    .exchange-card,
+    .product-card {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .cta {
+        margin-left: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
