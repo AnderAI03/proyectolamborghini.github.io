@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Camino al Lamborghini</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- Logo del proyecto -->
+                <h1>Proyecto Aguja</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Acerca</a></li>
+                    <li><a href="#exchanges">Intercambios</a></li>
+                    <li><a href="#merchandising">Merchandising</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#make-offer" class="cta">Haz una Oferta</a>
+            <div class="cart-icon">
+                <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="toggle-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Inicio -->
+    <section id="home">
+        <div class="home-container" data-aos="fade-in">
+            <h2>Bienvenidos a Proyecto Aguja</h2>
+            <p>Un viaje de intercambios que comienza con una aguja y aspira a llegar a un Lamborghini.</p>
+        </div>
+    </section>
+
+    <!-- Sección Acerca del Proyecto -->
+    <section id="about">
+        <div class="about-container" data-aos="fade-up">
+            <h2>Acerca del Proyecto</h2>
+            <p>
+                Proyecto Aguja es una iniciativa inspiradora que demuestra el poder del intercambio y la colaboración.
+                Comenzando con una simple aguja, el objetivo es realizar intercambios sucesivos para obtener artículos de mayor valor, culminando con la meta final: un Lamborghini.
+                Este proyecto no solo busca alcanzar una meta material, sino también fomentar la comunidad y el espíritu emprendedor.
+            </p>
+            <img src="images/project-image.jpg" alt="Imagen del Proyecto">
+        </div>
+    </section>
+
+    <!-- Sección de Intercambios -->
+    <section id="exchanges">
+        <video autoplay muted loop id="bg-video">
+            <source src="videos/exchanges-bg.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="exchanges-overlay"></div>
+        <div class="exchanges-content" data-aos="fade-up">
+            <h2>El Camino al Lamborghini</h2>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="exchanges-container" id="exchanges-container">
+                <!-- Los intercambios se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Merchandising -->
+    <section id="merchandising">
+        <div class="merchandising-container" data-aos="fade-up">
+            <h2>Apoya el Proyecto</h2>
+            <div class="products-container" id="products-container">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Contacto -->
+    <section id="contact">
+        <div class="contact-container" data-aos="fade-up">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" data-aos="fade-up">
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube" aria-label="YouTube"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <p>© 2023 Proyecto Aguja. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para detalles de intercambios -->
+    <div class="modal" id="exchange-modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-exchange-modal">&times;</span>
+            <div id="exchange-modal-content">
+                <!-- El contenido se carga dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el carrito -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-cart-modal">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items">
+                <!-- Los ítems del carrito se cargarán aquí -->
+            </div>
+            <div class="cart-total">
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="checkout-button">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para 'Haz una Oferta' -->
+    <div class="modal" id="offer-modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-offer-modal">&times;</span>
+            <h2>Haz una Oferta</h2>
+            <form id="offer-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <input type="text" placeholder="Título de la Oferta" required>
+                <textarea placeholder="Descripción de la Oferta" required></textarea>
+                <button type="submit">Enviar Oferta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
